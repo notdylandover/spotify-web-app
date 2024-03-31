@@ -6,12 +6,12 @@
 #### 1. Go to https://developer.spotify.com/dashboard
 #### 2. Create an app
 - Name and Description can be anything
-- Ignore website
+- Ignore the website text box
 - Set the Redirect URI to `http://localhost:3000/callback`
-- Check the Web API
+- Checkmark the Web API
 - Once created, head to `Settings` in the top right
 - Copy the ClientID, Client Secret, and the Redirect URI to the `TEMPLATE.env` file
-- Rename the `TEMPLATE.env` file to `.env`
+- Rename `TEMPLATE.env` to just `.env`
 #### 3. Run the `start.bat` file
 #### 4. Go to `localhost:3000` in any browser
 #### 5. Sign in to Spotify
@@ -22,8 +22,7 @@
 #### 2. In OBS, import a browser source.
 - URL is `localhost:3000/app`.
 - Width is `800` and the height is `215`, *no more*, *no less*.
-- Remove any custom CSS.
-> [!NOTE]\
+> [!NOTE]
 > You may have to refresh the source for it to update.
 #### 3. Done
 ## Screenshots

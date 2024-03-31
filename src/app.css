@@ -79,30 +79,9 @@ h2, p {
     transition: color var(--transition-duration) ease-in-out;
 }
 
-.control-buttons {
-    margin-top: 8px;
-    display: flex;
-    justify-content: center;
-}
-
-.control-button {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    padding-block: 0px;
-    padding-inline: 0px;
-    border: none;
-    border-radius: 15px;
-    background-color: white;
-}
-
-.control-button img {
-    fill: var(--font-color-primary);
-}
-
 .progress-container {
     height: 5px;
-    margin: 10px 0px 0px 10px;
+    margin: 60px 0px 0px 10px;
     background-color: rgba(50, 50, 50, 0.5);
     border-radius: 5px;
 }
