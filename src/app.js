@@ -2,20 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let previousTrackInfo = null;
 
     async function updateUI(trackInfo) {
+        const progress = (trackInfo.progress_ms / trackInfo.item.duration_ms) * 100;
+    
         $('#track-name').text(`${trackInfo.item.name}`);
         $('#artist-name').text(`${trackInfo.item.artists[0].name}`);
+        $('#progress-bar').css('width', `${progress}%`);
     
         const albumCover = $('#album-cover');
     
-        // Check if it's the first track or if the track has changed
         if (!previousTrackInfo || trackInfo.item.id !== previousTrackInfo.item.id) {
-            // Fade out the album cover
             albumCover.fadeOut(500, function() {
-                // Change the image source and fade it back in
                 albumCover.attr('src', trackInfo.item.album.images[0].url).fadeIn(500);
             });
     
-            previousTrackInfo = trackInfo; // Update previous track info
+            previousTrackInfo = trackInfo;
         }
     
         const trackNameElement = document.getElementById('track-name');
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
         document.documentElement.style.setProperty('--background-primary', dominantColor);
         document.documentElement.style.setProperty('--font-color-primary', fontColor);
-        document.documentElement.style.setProperty('--font-color-secondary', fontColor);
     
         console.log(trackInfo.item.name, 'by', trackInfo.item.artists[0].name);
     }
@@ -109,5 +108,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
     displayCurrentlyPlaying();
-    setInterval(displayCurrentlyPlaying, 2000);
+    setInterval(displayCurrentlyPlaying, 1000);
 });

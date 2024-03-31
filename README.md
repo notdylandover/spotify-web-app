@@ -15,9 +15,6 @@
 #### 3. Run the `start.bat` file
 #### 4. Go to `localhost:3000` in any browser
 #### 5. Sign in to Spotify
-> [!NOTE]\
-> Make sure you are sharing your listening activity on Spotify:\
-> `Settings` -> `Social` -> `Share my listening activity on Spotify` -> `ON`
 #### 7. Done.
 <!-- How to import to OBS -->
 ## How to import to OBS:
@@ -26,6 +23,8 @@
 - URL is `localhost:3000/app`.
 - Width is `800` and the height is `190`, *no more*, *no less*.
 - Remove any custom CSS.
+> [!NOTE]\
+> You may have to refresh the source for it to update.
 #### 3. Done
 ## Screenshots
 <img alt="Without Out - The Kid LAROI" src="./screenshots/example1.png" width="512px">
