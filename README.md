@@ -21,7 +21,7 @@
 #### 1. Go through the setup above.
 #### 2. In OBS, import a browser source.
 - URL is `localhost:3000/app`.
-- Width is `800` and the height is `190`, *no more*, *no less*.
+- Width is `800` and the height is `215`, *no more*, *no less*.
 - Remove any custom CSS.
 > [!NOTE]\
 > You may have to refresh the source for it to update.
