@@ -40,8 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
         document.documentElement.style.setProperty('--background-primary', dominantColor);
         document.documentElement.style.setProperty('--font-color-primary', fontColor);
-    
-        console.log(trackInfo.item.name, 'by', trackInfo.item.artists[0].name);
     }
 
     async function getDominantColor(imageUrl) {
