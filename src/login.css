@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1DB954;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+#login-container {
+    text-align: center;
+}
+
+#search-container {
+    margin-top: 20px;
+}
+
+#search-input {
+    padding: 8px;
+    width: 200px;
+}
+
+#search-btn {
+    padding: 8px 16px;
+    margin-left: 10px;
+}
+
+#search-results {
+    margin-top: 10px;
+}
