@@ -28,5 +28,5 @@
 - Remove any custom CSS.
 #### 3. Done
 ## Screenshots
-<img alt="Without Out - The Kid LAROI" src="./screenshots/1.png" width="256px">\
-<img alt="Versace on the Floor - Bruno Mars" src="./screenshots/2.png" width="256px">
+<img alt="Without Out - The Kid LAROI" src="./screenshots/1.png" width="512px">
+<img alt="Versace on the Floor - Bruno Mars" src="./screenshots/2.png" width="512px">
