@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 $('#track-name').text('No track currently playing');
                 $('#artist-name').text('');
-                $('#album-cover').attr('src', 'https://jccdallas.org/wp-content/uploads/2020/06/Spotify-Play-Button.png'); // Provide the URL for the pause image
+                $('#album-cover').attr('src', 'https://jccdallas.org/wp-content/uploads/2020/06/Spotify-Play-Button.png');
                 $('.artwork-container').show();
             }
         } catch (error) {
@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-
     displayCurrentlyPlaying();
     setInterval(displayCurrentlyPlaying, 1000);
 });
