@@ -1,17 +1,39 @@
 :root {
-    --roundness-primary: 30px;
-    --roundness-secondary: 20px;
+    --roundness-primary: 3em;
+    --roundness-secondary: 1.5em;
     --background-primary: #191414;
     --spotify-background-primary: #191414;
     --font-family-primary: sans-serif;
     --font-color-primary: rgb(255, 255, 255);
-    --font-size-primary: 12px;
+    --font-size-primary: 2em;
+    --font-size-secondary: 1em;
     --transition-duration: 1.5s;
+}
+
+:root {
+    --w: 100vw;
+    --h: 100vh;
+}
+
+:root {
+    --widget-padding: 1em;
+}
+
+:root {
+    --track-margin: var(--widget-padding);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: var(--w);
+    height: var(--h);
 }
 
 body {
     font-family: sans-serif;
-    margin: 0px;
+    margin: 0;
     display: flex;
     align-items: center;
 }
@@ -24,9 +46,9 @@ h2, p {
 .spotify-widget {
     display: flex;
     background-color: var(--background-primary);
-    min-width: 400px;
-    max-width: 800px;
-    padding: 10px;
+    min-width: 500px;
+    width: calc(var(--w) - var(--widget-padding));
+    padding: var(--widget-padding);
     border-radius: var(--roundness-primary);
     overflow: hidden;
     position: relative;
@@ -39,10 +61,9 @@ h2, p {
 }
 
 .artwork-container {
-    width: 175px;
-    height: 175px;
+    height: 20vh;
     overflow: hidden;
-    padding: 10px;
+    padding: var(--widget-padding);
     flex-shrink: 0;
 }
 
@@ -51,12 +72,12 @@ h2, p {
     height: 100%;
     object-fit: cover;
     border-radius: var(--roundness-secondary);
-    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 1em black;
     transition: transform var(--transition-duration) ease-in-out;
 }
 
 .track-info {
-    margin: 10px 10px 0px 0px;
+    padding: var(--track-margin);
     flex-grow: 1;
     overflow: hidden;
     white-space: nowrap;
@@ -65,38 +86,40 @@ h2, p {
 
 #track-name {
     width: fit-content;
-    margin-left: 10px;
+    margin-left: 1vw;
     font-family: var(--font-family-primary);
+    font-size: var(--font-size-primary);
     color: var(--font-color-primary);
     transition: color var(--transition-duration) ease-in-out;
 }
 
 #artist-name {
     width: fit-content;
-    margin-left: 10px;
-    padding-top: 8px;
+    font-size: var(--font-size-secondary);
+    margin-left: 1vw;
+    padding-top: 0.8vh;
     color: var(--font-color-primary);
     transition: color var(--transition-duration) ease-in-out;
 }
 
 .progress-container {
-    height: 5px;
-    margin: 60px 0px 0px 10px;
+    height: 1vh;
+    margin: 4vh 0 0 1vh;
     background-color: rgba(50, 50, 50, 0.5);
-    border-radius: 5px;
+    border-radius: 100em;
 }
 
 .progress-bar {
-    height: 5px;
+    height: 1vh;
     background-color: var(--font-color-primary);
-    border-radius: 5px;
+    border-radius: 100em;
     transition: width 1s linear;
 }
 
 .logo-container {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 2vh;
+    right: 2vw;
     display: flex;
     align-items: center;
 }
@@ -105,7 +128,7 @@ h2, p {
     opacity: 0;
     position: absolute;
     right: 50px;
-    font-size: 16px;
+    font-size: var(--font-size-secondary);
     font-weight: 400;
     color: white;
     animation: showCredit-text 5s ease-in-out;
@@ -120,9 +143,9 @@ h2, p {
     background-repeat: no-repeat;
     background-size: 30px;
     background-color: var(--spotify-background-primary);
-    border-radius: 30px;
+    border-radius: 9999em;
     background-position: calc(100% - 5px) 50%;
-    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 5px black;
     animation: showCredit-logo 5s ease-in-out;
     animation-delay: 3s;
 }
@@ -181,4 +204,9 @@ h2, p {
     25%, 75% {
         opacity: 1;
     }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    display: none !important;
 }
