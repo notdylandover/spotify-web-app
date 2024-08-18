@@ -10,8 +10,9 @@
 
     --font-color-primary: rgb(255, 255, 255);
 
-    --font-size-primary: 2em;
-    --font-size-secondary: 1em;
+    --font-size-primary: 32px;
+    --font-size-secondary: 20px;
+    --font-size-tertiary: 16px;
 
     --transition-duration: 1.5s;
 }
@@ -43,12 +44,16 @@ h2, p {
     padding: 0;
 }
 
+* {
+    transition: all var(--transition-duration) ease-in-out;
+}
+
 .spotify-widget {
     display: flex;
     background-color: var(--background-primary);
     min-width: 495px;
-    min-height: 200px;
-    height: calc(100vh - (var(--padding) * 2));
+    width: fit-content;
+    height: 200px;
     padding: var(--padding);
     border-radius: var(--roundness-primary);
     overflow: hidden;
@@ -62,14 +67,13 @@ h2, p {
 }
 
 .artwork-container {
-    height: calc(100vh - (var(--padding) * 4));
     overflow: hidden;
     padding: var(--padding);
     flex-shrink: 0;
 }
 
 #album-cover {
-    height: 100%;
+    height: 170px;
     object-fit: cover;
     border-radius: var(--roundness-secondary);
     box-shadow: 0 0 var(--padding) black;
@@ -86,7 +90,7 @@ h2, p {
 
 #track-name {
     width: fit-content;
-    margin-left: var(--padding);
+    padding: calc(var(--padding) / 4) 0;
     font-family: var(--font-family-primary);
     font-size: var(--font-size-primary);
     color: var(--font-color-primary);
@@ -96,22 +100,21 @@ h2, p {
 #artist-name {
     width: fit-content;
     font-size: var(--font-size-secondary);
-    margin-left: var(--margin);
-    padding-top: calc(var(--padding) / 2);
+    padding: calc(var(--padding) / 4) 0;
     color: var(--font-color-primary);
     transition: color var(--transition-duration) ease-in-out;
 }
 
 .progress-container {
     height: 10px;
-    margin: 40px 0 0 10px;
     background-color: rgba(50, 50, 50, 0.5);
+    min-width: 10px;
+    margin: var(--margin) 0;
     border-radius: 999999em;
 }
 
 .progress-bar {
     height: 10px;
-    min-width: 10px;
     background-color: var(--font-color-primary);
     border-radius: 999999em;
     transition: width 1s linear;
@@ -128,8 +131,8 @@ h2, p {
 .created-by {
     opacity: 0;
     position: absolute;
-    right: 50px;
-    font-size: var(--font-size-secondary);
+    left: 50px;
+    font-size: var(--font-size-tertiary);
     font-weight: 400;
     color: white;
     animation: showCredit-text 5s ease-in-out;
@@ -141,13 +144,9 @@ h2, p {
     height: 30px;
     padding: 5px;
     margin: 5px;
-    background-image: url('https://static-00.iconduck.com/assets.00/spotify-icon-2048x2048-5gqpkwih.png');
-    background-repeat: no-repeat;
-    background-size: 30px;
     background-color: var(--spotify-background-primary);
     border-radius: 9999em;
-    background-position: calc(100% - 5px) 50%;
-    box-shadow: 0 0 5px black;
+    box-shadow: var(--spotify-background-primary) 0 0 5px;
     animation: showCredit-logo 5s ease-in-out;
     animation-delay: 3s;
 }

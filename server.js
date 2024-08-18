@@ -2,14 +2,15 @@ require('dotenv').config();
 const SpotifyWebApi = require('spotify-web-api-node');
 const express = require('express');
 const path = require('path');
+const net = require('net');
 
 const app = express();
-const PORT = process.env.PORT || 3005;
+let port = parseInt(process.env.PORT, 10) || 3000;
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  redirectUri: process.env.REDIRECT_URI
+  redirectUri: process.env.REDIRECT_URI,
 });
 
 app.use(express.static('src'));
@@ -50,6 +51,25 @@ app.get('/currently-playing', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+const startServer = (port) => {
+  const server = net.createServer();
+  server.once('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`Port ${port} is already in use. Trying port ${port + 1}...`);
+      startServer(port + 1);
+    } else {
+      console.error(err);
+    }
+  });
+
+  server.once('listening', () => {
+    server.close();
+    app.listen(port, () => {
+      console.log(`Server is running on http://localhost:${port}`);
+    });
+  });
+
+  server.listen(port);
+};
+
+startServer(port);

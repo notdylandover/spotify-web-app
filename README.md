@@ -3,19 +3,21 @@
 **A Basic Spotify Web Application.**
 <!-- How to Setup -->
 ## How to Setup:
-#### 1. Go to https://developer.spotify.com/dashboard
-#### 2. Create an app
+#### 1. Know what port you can use.
+- If you have other web apps running, they might be using port 3000. Please make sure when running the app that you configure the settings to the correct port.
+#### 2. Go to https://developer.spotify.com/dashboard
+#### 3. Create an app
 - Name and Description can be anything
 - Ignore the website text box
-- Set the Redirect URI to `http://localhost:3005/callback`
+- Set the Redirect URI to `http://localhost:3000/callback`
 - Checkmark the Web API
 - Once created, head to `Settings` in the top right
 - Copy the `ClientID`, `Client Secret`, and the `Redirect URI` to the `TEMPLATE.env` file.
-- Port can be 3005.
+- Port can be 3000.
 - Rename `TEMPLATE.env` to just `.env`.
-#### 3. Run the `start.bat` file. (**LEAVE IT OPEN!!!**)
-#### 4. Go to `localhost:3005` in any browser.
-#### 5. Sign in to Spotify.
+#### 4. Run the `start.bat` file. Leave the console open.
+#### 5. Go to `localhost:3000` in any browser.
+#### 6. Sign in to Spotify.
 #### 7. Done.
 <!-- How to import to OBS -->
 ## How to import to OBS:
